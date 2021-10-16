@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct Dish {
+struct Dish: Decodable {
     let id, name, description, image: String?
-    let colories: Int?
+    let calories: Int?
     
-    var formattedColories: String {
-        return "\(colories ?? 0) colories"
+    var formattedCalories: String {
+        return "\(calories ?? 0) calories"
     }
- 
 }

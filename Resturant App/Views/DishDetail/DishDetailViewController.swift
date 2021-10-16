@@ -26,7 +26,7 @@ class DishDetailViewController: UIViewController {
         dishImageView.kf.setImage(with:dish.image?.asUrl)
         titleLabel.text = dish.name
         descriptionLabel.text = dish.description
-        caloriesLabel.text = dish.formattedColories
+        caloriesLabel.text = dish.formattedCalories
     }
     
     @IBAction func orderNow(_ sender: UIButton) {

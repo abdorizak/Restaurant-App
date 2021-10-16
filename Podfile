@@ -7,4 +7,5 @@ target 'Resturant App' do
 
   # Pods for Resturant App
     pod "Kingfisher"
+    pod "ProgressHUD"
 end

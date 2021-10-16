@@ -319,7 +319,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Next Restuarent" id="yEd-Nw-Nyh">
                         <barButtonItem key="backBarButtonItem" title=" " id="rgC-e4-Euk"/>
-                        <barButtonItem key="rightBarButtonItem" image="cart.circle.fill" catalog="system" id="yRK-af-YZ9">
+                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="yRK-af-YZ9">
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
                                 <segue destination="ps8-Xd-UEZ" kind="show" id="rP8-6I-QyW"/>
@@ -385,21 +385,40 @@
             </objects>
             <point key="canvasLocation" x="1230" y="76"/>
         </scene>
-        <!--View Controller-->
+        <!--List Orders View Controller-->
         <scene sceneID="qdR-x3-Qnp">
             <objects>
-                <viewController id="ps8-Xd-UEZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListOrdersViewController" id="ps8-Xd-UEZ" customClass="ListOrdersViewController" customModule="Resturant_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oka-fk-M94">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="84o-4H-CK6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ps8-Xd-UEZ" id="jPb-Pc-qcC"/>
+                                    <outlet property="delegate" destination="ps8-Xd-UEZ" id="VNs-rB-h74"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="beN-7e-iQC"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="84o-4H-CK6" firstAttribute="top" secondItem="beN-7e-iQC" secondAttribute="top" id="6an-gw-nbJ"/>
+                            <constraint firstItem="84o-4H-CK6" firstAttribute="leading" secondItem="beN-7e-iQC" secondAttribute="leading" id="PgE-cw-8mE"/>
+                            <constraint firstAttribute="bottom" secondItem="84o-4H-CK6" secondAttribute="bottom" id="g4M-6Q-bl8"/>
+                            <constraint firstItem="84o-4H-CK6" firstAttribute="trailing" secondItem="beN-7e-iQC" secondAttribute="trailing" id="xdZ-qL-1xy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1C9-oh-f9d"/>
+                    <connections>
+                        <outlet property="tableView" destination="84o-4H-CK6" id="daV-EG-CMw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1a-kL-NCJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="759"/>
+            <point key="canvasLocation" x="1229" y="802"/>
         </scene>
         <!--Dish Detail View Controller-->
         <scene sceneID="3G2-4G-ILy">
@@ -549,11 +568,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Yd-dD-THm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="76"/>
+            <point key="canvasLocation" x="348" y="76"/>
         </scene>
     </scenes>
     <resources>
-        <image name="cart.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

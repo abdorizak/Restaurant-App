@@ -9,7 +9,7 @@ import UIKit
 
 class DeshisPortraitCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "DeshisPortraitCollectionViewCell"
+    static let identifier = String(describing: DeshisPortraitCollectionViewCell.self)
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var deshImageView: UIImageView!
@@ -19,7 +19,7 @@ class DeshisPortraitCollectionViewCell: UICollectionViewCell {
     func setup(dish: Dish){
         titleLabel.text = dish.name
         deshImageView.kf.setImage(with: dish.image?.asUrl)
-        coloriesLabel.text = dish.formattedColories
+        coloriesLabel.text = dish.formattedCalories
         descriptionLabel.text = dish.description
     }
     

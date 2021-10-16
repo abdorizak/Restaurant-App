@@ -12,10 +12,10 @@ class ListDishesViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     var category: DishCategory?
     var dishes: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 134),
-        .init(id: "id2", name: "Indomie", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 324),
-        .init(id: "id3", name: "Pizza", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 214),
-            .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 334)]
+        .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", calories: 134),
+        .init(id: "id2", name: "Indomie", description: "This is the best I have tested", image: "https://picsum.photos/100/200", calories: 324),
+        .init(id: "id3", name: "Pizza", description: "This is the best I have tested", image: "https://picsum.photos/100/200", calories: 214),
+            .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", calories: 334)]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,7 +13,7 @@ class OnBoardingVc: UIViewController {
     @IBOutlet var nextBtn: UIButton!
     @IBOutlet var pageController: UIPageControl!
     
-    var slides: [OnBoardingSlide] = []
+    var slides = [OnBoardingSlide]()
     
     var currentPage = 0 {
         didSet{

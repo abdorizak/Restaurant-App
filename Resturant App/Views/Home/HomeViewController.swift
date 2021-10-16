@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -15,29 +16,38 @@ class HomeViewController: UIViewController {
     
     
     
-    var categories: [DishCategory] = [
-        .init(id: "id1", name: "Africa Dishes", image: "https://picsum.photos/100/200"),
-        .init(id: "id1", name: "Africa Dishes 2", image: "https://picsum.photos/100/200"),
-        .init(id: "id1", name: "Africa Dishes 3", image: "https://picsum.photos/100/200"),
-        .init(id: "id1", name: "Africa Dishes 4", image: "https://picsum.photos/100/200"),
-        .init(id: "id1", name: "Africa Dishes 5", image: "https://picsum.photos/100/200")]
-    
-    var populars: [Dish] = [
-        .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 134),
-        .init(id: "id2", name: "Indomie", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 324),
-        .init(id: "id3", name: "Pizza", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 214),
-            .init(id: "id1", name: "Garri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 334)]
-    
-    var specials: [Dish] = [
-        .init(id: "id1", name: "Frank Tom", description: "This is my Favourite Dish", image: "https://picsum.photos/100/200", colories: 134),
-        .init(id: "id2", name: "Beans and Gerri", description: "This is the best I have tested", image: "https://picsum.photos/100/200", colories: 324)
-    ]
+    var categories: [DishCategory] = []
+    var populars: [Dish] = []
+    var specials: [Dish] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        specialsCollectionView.dataSource = self
+        specialsCollectionView.delegate = self
         registryCell()
+        
+        ProgressHUD.show()
+        NetworkService.shared.fetchAllCategories { [weak self](result) in
+            switch result {
+            case .success(let alldishes):
+                print("seccessfull")
+                ProgressHUD.dismiss()
+                self?.categories = alldishes.categories ?? []
+                self?.populars = alldishes.populars ?? []
+                self?.specials = alldishes.specials ?? []
+
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialsCollectionView.reloadData()
+            case .failure(let error):
+                print(error.localizedDescription)
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
+        
+
     
     private func registryCell() {
         categoryCollectionView.register(UINib(nibName: CategoryCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
