@@ -10,4 +10,4 @@ and then use this command on terminal root of folder app
 pod install
 ```
 
-thanks for comming :)
+thanks for comming 😍
