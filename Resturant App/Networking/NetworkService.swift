@@ -25,6 +25,11 @@ struct NetworkService {
     }
     
     
+    func fetchCategoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void) {
+        request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
+    }
+    
+    
     private func request<T: Decodable>(route: Route, method: Method, parameters: [String: Any]? = nil, completion: @escaping(Result<T, Error>) -> Void) {
             guard let request = createRequest(route: route, method: method, parameters: parameters) else {
                 completion(.failure(AppError.unknownError))
