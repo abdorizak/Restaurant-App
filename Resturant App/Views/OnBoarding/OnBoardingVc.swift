@@ -41,6 +41,7 @@ class OnBoardingVc: UIViewController {
             let controller = storyboard?.instantiateViewController(identifier: "HomeVC") as! UINavigationController
             controller.modalPresentationStyle = .fullScreen
             controller.modalTransitionStyle = .crossDissolve
+            UserDefaults.standard.hasOnboarded = true
             present(controller, animated: true, completion: nil)
         }else{
             currentPage += 1

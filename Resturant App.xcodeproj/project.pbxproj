@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10715FE7271A831900B13CCC /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10715FE6271A831900B13CCC /* UserDefaults+Extension.swift */; };
 		1081DB4826F7221F0093A83B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081DB4726F7221F0093A83B /* AppDelegate.swift */; };
 		1081DB4A26F7221F0093A83B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081DB4926F7221F0093A83B /* SceneDelegate.swift */; };
 		1081DB4F26F7221F0093A83B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1081DB4D26F7221F0093A83B /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10715FE6271A831900B13CCC /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		1081DB4426F7221F0093A83B /* Resturant App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resturant App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1081DB4726F7221F0093A83B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1081DB4926F7221F0093A83B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				1081DB6126F72D760093A83B /* UIView+Extention.swift */,
 				1081DB7326F7CE4F0093A83B /* String+Extention.swift */,
 				10CFD1912701998800429876 /* UIVIewController+Extention.swift */,
+				10715FE6271A831900B13CCC /* UserDefaults+Extension.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				10CFD1A927045AF000429876 /* AppError.swift in Sources */,
 				1081DB7726F86EF40093A83B /* CardView.swift in Sources */,
 				1081DB7F26F8C8FF0093A83B /* Dish.swift in Sources */,
+				10715FE7271A831900B13CCC /* UserDefaults+Extension.swift in Sources */,
 				1081DB6426F72EDD0093A83B /* OnBoardingSlide.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
